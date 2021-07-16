@@ -29,8 +29,15 @@ public class Pawn extends ChessPiece {
 
         ChessPosition[] canMoveHere= getValidMoveFromCurrentPosition(currentRow,currentCol) ;
          for(int i=0;i< canMoveHere.length;i++){
-             if(canMoveHere[i] !=null)
-                 System.out.println(canMoveHere[i].toString());
+             if(canMoveHere[i] !=null){
+                 if(canMoveHere[i].x == futureRow && canMoveHere[i].y == futureCol){
+                     return true; //valid move
+                 }
+                 System.out.println("Not a valid move");
+                 return false;
+
+             }
+
          }
 
 /**
